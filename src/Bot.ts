@@ -1,5 +1,7 @@
 import { Client } from "discord.js";
 import ENV from "./Config";
+import interactionCreate from "./listeners/interactionCreate";
+import ready from "./listeners/ready";
 
 const token = ENV.TOKEN;
 
@@ -9,6 +11,7 @@ const client = new Client({
   intents: []
 });
 
-client.login(token);
+ready(client);
+interactionCreate(client);
 
-console.log(client);
+client.login(token);

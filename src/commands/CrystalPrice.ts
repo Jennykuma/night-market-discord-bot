@@ -22,7 +22,7 @@ export const CrystalPrice: Command = {
           .setTitle(`Current Crystal Price: ${priceFor95} gold / 95 blue crystals`)
           .setDescription(`as of ${moment(crystalPrice['updatedAt']).fromNow()}`)
           .addFields(
-            { name: `Extra Info: `, value: `${priceFor950} gold / 950 Blue Crystals` }
+            { name: `Extra Info: `, value: `${priceFor950} gold / 950 blue crystals` }
           )
           .setTimestamp()
           .setThumbnail(`${crystalPrice['image']}`)

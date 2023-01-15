@@ -17,7 +17,7 @@ export const CrystalPrice: Command = {
         const priceFor95 = Math.ceil(parseFloat(crystalPrice['recentPrice']) * 95)
         const priceFor950 = Math.ceil(parseFloat(crystalPrice['recentPrice']) * 95) * 10
         
-        const exampleEmbed = new EmbedBuilder()
+        const crystalPriceEmbed = new EmbedBuilder()
           .setColor('#8876E8')
           .setTitle(`Current Crystal Price: ${priceFor95} gold / 95 blue crystals`)
           .setDescription(`as of ${moment(crystalPrice['updatedAt']).fromNow()}`)
@@ -30,7 +30,7 @@ export const CrystalPrice: Command = {
 
         interaction.followUp({
           ephemeral: true,
-          embeds: [exampleEmbed]
+          embeds: [crystalPriceEmbed]
         });
       })
       .catch((error) => { return error })

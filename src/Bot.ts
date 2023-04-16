@@ -33,7 +33,7 @@ ready(client);
 interactionCreate(client);
 
 client.on('ready', (client) => {
-  client.user?.setActivity('Night Market clowns', { type: ActivityType.Watching });
+  client.user.setActivity('Night Market clowns', { type: ActivityType.Watching });
   scheduleShopReminderMessage();
 });
 

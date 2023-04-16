@@ -16,8 +16,8 @@ const client = new Client({
 
 function scheduleShopReminderMessage() {
   var shopReminderJob = new CronJob(
-    // At minute 0 past every 3rd hour from 12 through 23 on Tuesday
-    '0 12-23/3 * * 2',
+    // At minute 0 past every 3rd hour from 11 through 23 on Tuesday
+    '0 11-23/3 * * 2',
     function() {
       client.channels.fetch('940792601181827114')
         .then(channel=>(channel as TextChannel).send({embeds: [shopReminderEmbed]}));

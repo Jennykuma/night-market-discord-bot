@@ -1,7 +1,7 @@
 import { CommandInteraction, Client, EmbedBuilder } from "discord.js";
 import { Command } from "../Command";
 
-export const shops = ['Frog Shop', 'Guild Shop', 'Pirate Ship Shop', 'PvP Shop', 'Condom Exchange Shop', 'Duck Hotsprings Exchange Shop']
+export const shops = ['Guild Shop', 'Pirate Ship Shop', 'PvP Shop', 'Condom Exchange Shop', 'Event Exchange Shop', 'Skin Shop b4 skins leave']
 
 export const shopReminderEmbed = new EmbedBuilder()
   .setColor('#e2725b')
@@ -9,7 +9,7 @@ export const shopReminderEmbed = new EmbedBuilder()
   .setDescription(`
     ❗❗ 🇮 🇲 🇵 🇴 🇷 🇹 🇦 🇳 🇹 ❗❗
 
-    Remember to buy out your: 
+    Remember to buy out your:
     - ${shops.join("\n - ")}`
   )
   .setThumbnail('https://i.imgur.com/rlfvJPs.png')

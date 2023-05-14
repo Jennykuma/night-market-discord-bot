@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Deploy code on push
-       run: npm run start
+       run: echo Hello world!

@@ -13,5 +13,5 @@ jobs:
       with:
         USERNAME: ubuntu
         HOST: ${{ secrets.HOST }}
-        PASSWOD: ${{ secrets.PASSWORD }}
+        PASSWORD: ${{ secrets.PASSWORD }}
         script: whoami

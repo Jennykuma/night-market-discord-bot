@@ -12,6 +12,6 @@ jobs:
       uses: appleboy/ssh-action@v0.1.10
       with:
         USERNAME: ubuntu
-        host: ${{ secrets.HOST }}
-        password: ${{ secrets.PASSWORD }}
+        HOST: ${{ secrets.HOST }}
+        PASSWOD: ${{ secrets.PASSWORD }}
         script: whoami

@@ -11,7 +11,7 @@ jobs:
     - name: SSH Remote Commands
       uses: appleboy/ssh-action@v0.1.10
       with:
-        HOST: ${{ secrets.HOSTNAME }}
-        USERNAME: ubuntu
-        PASSWORD: ${{ secrets.PASSWORD }}
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
         script: whoami

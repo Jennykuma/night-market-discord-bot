@@ -8,5 +8,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-     - name: Deploy code on push
-       run: echo Hello world!
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v0.1.10
+        env:
+          USERNAME: ubuntu
+          host: ${{ secrets.HOST }}
+          password: ${{ secrets.PASSWORD }}
+          script: whoami

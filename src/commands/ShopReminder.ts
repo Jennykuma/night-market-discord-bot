@@ -6,11 +6,9 @@ export const shops = ['Guild Shop', 'Pirate Ship Shop', 'PvP Shop', 'Condom Exch
 export const shopReminderEmbed = new EmbedBuilder()
   .setColor('#e2725b')
   .setTitle('Shop Reminder ⚠️')
-  .setDescription(`
-    ❗❗ 🇮 🇲 🇵 🇴 🇷 🇹 🇦 🇳 🇹 ❗❗
-
-    Remember to buy out your:
-    ${shops.join("\n")}`
+  .setDescription(`❗❗ 🇮 🇲 🇵 🇴 🇷 🇹 🇦 🇳 🇹 ❗❗`)
+  .setFields(
+    { name: "Remember to buy out your:", value: shops + " " }
   )
   .setThumbnail('https://i.imgur.com/rlfvJPs.png')
   .setFooter({ text: 'by Jennykuma' });

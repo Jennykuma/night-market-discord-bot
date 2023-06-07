@@ -10,7 +10,7 @@ export const shopReminderEmbed = new EmbedBuilder()
     ❗❗ 🇮 🇲 🇵 🇴 🇷 🇹 🇦 🇳 🇹 ❗❗
 
     Remember to buy out your:
-    - ${shops.join("\n - ")}`
+    ${shops.join("\n")}`
   )
   .setThumbnail('https://i.imgur.com/rlfvJPs.png')
   .setFooter({ text: 'by Jennykuma' });

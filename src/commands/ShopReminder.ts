@@ -8,7 +8,7 @@ export const shopReminderEmbed = new EmbedBuilder()
   .setTitle('Shop Reminder ⚠️')
   .setDescription(`❗❗ 🇮 🇲 🇵 🇴 🇷 🇹 🇦 🇳 🇹 ❗❗`)
   .setFields(
-    { name: "Remember to buy out your:", value: shops + " " }
+    { name: "Remember to buy out your:", value: shops.join("\n") }
   )
   .setThumbnail('https://i.imgur.com/rlfvJPs.png')
   .setFooter({ text: 'by Jennykuma' });

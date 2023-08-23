@@ -1,7 +1,7 @@
 import { CommandInteraction, Client, EmbedBuilder } from "discord.js";
 import { Command } from "../Command";
 
-export const shops = ['Guild Shop', 'Pirate Ship Shop', 'PvP Shop', 'Clown/Brel/Kayangel Shop', 'Event Exchange Shop', 'Skin Shop b4 any skins leave']
+export const shops = ['Guild Shop', 'Pirate Ship Shop', 'PvP Shop', 'Clown/Brel/Kayangel/Akkan Shop', 'Event Exchange Shop', 'Skin Shop b4 any skins leave']
 
 export const shopReminderEmbed = new EmbedBuilder()
   .setColor('#e2725b')

@@ -2,7 +2,7 @@ import { ActivityType, Client, TextChannel } from 'discord.js';
 import ENV from './Config';
 import interactionCreate from './listeners/interactionCreate';
 import ready from './listeners/ready';
-import { shops, shopReminderEmbed } from './commands/ShopReminder';
+import { shopReminderEmbed } from './commands/ShopReminder';
 
 const token = ENV.TOKEN;
 

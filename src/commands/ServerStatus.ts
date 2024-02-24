@@ -7,7 +7,7 @@ export const ServerStatus: Command = {
   description: "Returns Mari's server status",
   run: async (client: Client, interaction: CommandInteraction) => {
     getServerStatus()
-      .then((data: any) => {
+      .then((data) => {
         let serverStatus = data
 
         const serverStatusEmbed = new EmbedBuilder()

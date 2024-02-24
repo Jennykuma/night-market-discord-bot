@@ -28,10 +28,7 @@ export const CrystalPrice: Command = {
           .setThumbnail(`${crystalPrice['image']}`)
           .setFooter({ text: 'by Jennykuma' });
 
-        interaction.followUp({
-          ephemeral: true,
-          embeds: [crystalPriceEmbed]
-        });
+        interaction.editReply({ embeds: [crystalPriceEmbed] });
       })
       .catch((error) => { return error })
   }

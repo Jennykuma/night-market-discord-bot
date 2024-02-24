@@ -7,9 +7,6 @@ export const Hello: Command = {
   run: async (client: Client, interaction: CommandInteraction) => {
     const content = 'Hello there! Welcome to Night Market! Please ask about ketchup milk :D';
 
-    await interaction.followUp({
-        ephemeral: true,
-        content
-    });
+    interaction.editReply({ content });
   }
 };

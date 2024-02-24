@@ -1,22 +1,22 @@
-import { CommandInteraction, Client, EmbedBuilder } from "discord.js";
-import { Command } from "../Command";
-import axios from "axios";
-import moment from "moment";
+import { CommandInteraction, Client, EmbedBuilder } from 'discord.js';
+import { Command } from '../Command';
+import axios from 'axios';
+import moment from 'moment';
 
 var content = '';
 
 export const CrystalPrice: Command = {
-  name: "crystalprice",
-  description: "Returns the gold price of Blue Crystals",
+  name: 'crystalprice',
+  description: 'Returns the gold price of Blue Crystals',
   run: async (client: Client, interaction: CommandInteraction) => {
     getCrystalPrice()
       .then((data) => {
-        var crystalPrice = data[0];
+        let crystalPrice = data[0];
         content = `Current price is: ${crystalPrice} as of ${moment(crystalPrice['updatedAt']).fromNow()}`;
 
         const priceFor95 = Math.ceil(parseFloat(crystalPrice['recentPrice']) * 95)
         const priceFor950 = Math.ceil(parseFloat(crystalPrice['recentPrice']) * 95) * 10
-        
+
         const crystalPriceEmbed = new EmbedBuilder()
           .setColor('#8876E8')
           .setTitle(`Current Crystal Price: ${priceFor95} gold / 95 blue crystals`)
@@ -39,7 +39,7 @@ export const CrystalPrice: Command = {
 
 async function getCrystalPrice() {
   try {
-    const { data, status } = await axios.get<any>(
+    const { data } = await axios.get<any>(
       'https://www.lostarkmarket.online/api/export-market-live/North%20America%20West?category=Currency%20Exchange',
       {
         headers: {

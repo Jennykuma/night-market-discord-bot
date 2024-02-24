@@ -1,4 +1,4 @@
-import { CommandInteraction, Client, EmbedBuilder } from 'discord.js';
+import { AttachmentBuilder, CommandInteraction, Client, EmbedBuilder } from 'discord.js';
 import { Command } from '../Command';
 import axios from 'axios';
 
@@ -8,18 +8,17 @@ export const ServerStatus: Command = {
   run: async (client: Client, interaction: CommandInteraction) => {
     getServerStatus()
       .then((data) => {
-        let serverStatus = data
+        let serverStatus = data['Mari'];
 
+        const thumbnail = new AttachmentBuilder('./src/assets/bunNote.png');
         const serverStatusEmbed = new EmbedBuilder()
           .setColor(serverColour(serverStatus))
-          .setTitle(`Server status: ${serverStatus}`)
+          .setTitle(`Mari - ${serverStatus}`)
+          .setThumbnail('attachment://bunNote.png')
           .setTimestamp()
           .setFooter({ text: 'by Jennykuma' });
 
-        interaction.followUp({
-          ephemeral: true,
-          embeds: [serverStatusEmbed]
-        });
+        interaction.editReply({ embeds: [serverStatusEmbed], files: [thumbnail] });
       })
       .catch((error) => { return error })
   }
@@ -28,14 +27,14 @@ export const ServerStatus: Command = {
 async function getServerStatus() {
   try {
     const { data } = await axios.get<any>(
-      'http://lostarkapi.herokuapp.com/server/Mari',
+      'https://lost-ark-api.vercel.app/server/Mari',
       {
         headers: {
           Accept: 'application/json',
-        }
+        },
       },
     );
-    return data;
+    return data.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.log('error message: ', error.message);

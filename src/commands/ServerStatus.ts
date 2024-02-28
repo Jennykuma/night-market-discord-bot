@@ -15,7 +15,6 @@ export const ServerStatus: Command = {
           .setColor(serverColour(serverStatus))
           .setTitle(`Mari - ${serverStatus}`)
           .setThumbnail('attachment://bunNote.png')
-          .setTimestamp()
           .setFooter({ text: 'by Jennykuma' });
 
         interaction.editReply({ embeds: [serverStatusEmbed], files: [thumbnail] });

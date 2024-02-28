@@ -10,7 +10,6 @@ export const shopReminderEmbed = new EmbedBuilder()
     { name: 'Remember to buy out your:', value: shops.join('\n') }
   )
   .setThumbnail('attachment://bunEncourage.png')
-  .setTimestamp()
   .setFooter({ text: 'by Jennykuma' });
 
 export const ShopReminder: Command = {

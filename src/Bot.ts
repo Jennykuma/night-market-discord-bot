@@ -1,4 +1,4 @@
-import { ActivityType, Client, TextChannel } from 'discord.js';
+import { ActivityType, AttachmentBuilder, Client, TextChannel } from 'discord.js';
 import ENV from './Config';
 import interactionCreate from './listeners/interactionCreate';
 import ready from './listeners/ready';
@@ -19,8 +19,9 @@ function scheduleShopReminderMessage() {
     // At minute 0 past every 3rd hour from 11 through 23 on Tuesday
     '0 11-23/3 * * 2',
     function() {
+      const thumbnail = new AttachmentBuilder('./src/assets/bunEncourage.png');
       client.channels.fetch('940792601181827114')
-        .then(channel=>(channel as TextChannel).send({embeds: [shopReminderEmbed]}));
+        .then(channel=>(channel as TextChannel).send({ embeds: [shopReminderEmbed], files: [thumbnail] }));
     },
     null,
     true,

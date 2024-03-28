@@ -4,16 +4,16 @@ import axios from 'axios';
 
 export const ServerStatus: Command = {
   name: 'serverstatus',
-  description: "Returns Mari's server status",
+  description: "Returns Thaemine's server status",
   run: async (client: Client, interaction: CommandInteraction) => {
     getServerStatus()
       .then((data) => {
-        let serverStatus = data['Mari'];
+        let serverStatus = data['Thaemine'];
 
         const thumbnail = new AttachmentBuilder('./src/assets/bunNote.png');
         const serverStatusEmbed = new EmbedBuilder()
           .setColor(serverColour(serverStatus))
-          .setTitle(`Mari - ${serverStatus}`)
+          .setTitle(`Thaemine - ${serverStatus}`)
           .setThumbnail('attachment://bunNote.png')
           .setFooter({ text: 'by Jennykuma' });
 
@@ -26,7 +26,7 @@ export const ServerStatus: Command = {
 async function getServerStatus() {
   try {
     const { data } = await axios.get<any>(
-      'https://lost-ark-api.vercel.app/server/Mari',
+      'https://lost-ark-api.vercel.app/server/Thaemine',
       {
         headers: {
           Accept: 'application/json',

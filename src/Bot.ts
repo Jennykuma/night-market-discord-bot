@@ -1,10 +1,11 @@
 import { ActivityType, AttachmentBuilder, Client, TextChannel } from 'discord.js';
-import ENV from './Config';
 import interactionCreate from './listeners/interactionCreate';
 import ready from './listeners/ready';
 import { shopReminderEmbed } from './commands/ShopReminder';
 
-const token = ENV.TOKEN;
+require("dotenv").config();
+
+const token = process.env.DISCORD_TOKEN;
 
 var CronJob = require('cron').CronJob;
 

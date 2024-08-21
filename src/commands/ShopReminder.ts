@@ -1,11 +1,11 @@
 import { AttachmentBuilder, CommandInteraction, Client, EmbedBuilder } from 'discord.js';
 import { Command } from '../Command';
 
-export const shops = ['Guild Shop', 'Pirate Shop Ship', 'PvP Shop', 'Clown/Brel/Kayangel/Akkan Shop', 'Event Exchange Shop', 'Skin Shop b4 any skins leave']
+export const shops = ['Guild shop', 'Pirate shop ship', 'PvP shop', 'Solo raid shop', 'Event shop', 'Get skins b4 any skins leave']
 
 export const shopReminderEmbed = new EmbedBuilder()
   .setColor('#e2725b')
-  .setTitle('❗❗ Shop Reminder ⚠️')
+  .setTitle('⚠️ Reminder ⚠️')
   .setFields(
     { name: 'Remember to buy out your:', value: shops.join('\n') }
   )

@@ -1,13 +1,17 @@
 import { AttachmentBuilder, CommandInteraction, Client, EmbedBuilder } from 'discord.js';
 import { Command } from '../Command';
 
-export const shops = ['Guild shop', 'Pirate shop ship', 'PvP shop', 'Solo raid shop', 'Event shop', 'Get skins b4 any skins leave']
+export const shops = ['Guild shop', 'Pirate shop ship', 'PvP shop', 'Solo raid shop', 'Buzzling & Event shop', 'Get skins b4 any skins leave']
+export const tasks = ['Stronghold pet training']
 
 export const shopReminderEmbed = new EmbedBuilder()
   .setColor('#e2725b')
   .setTitle('⚠️ Reminder ⚠️')
   .setFields(
     { name: 'Remember to buy out your:', value: shops.join('\n') }
+  )
+  .setFields(
+    { name: 'Remember to do your: ', value: tasks.join('\n') }
   )
   .setThumbnail('attachment://bunEncourage.png')
   .setFooter({ text: 'by Jennykuma' });
